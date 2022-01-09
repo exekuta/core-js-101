@@ -88,8 +88,9 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
+function getLinearEquationRoot(a, b) {
+  const eq = -(b / a);
+  return eq;
 }
 
 
@@ -111,8 +112,15 @@ function getLinearEquationRoot(/* a, b */) {
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  // throw new Error('Not implemented');
+  // const a = Math.atan2(y1, x1);
+  // const b = Math.atan2(y2, x2);
+  // return a + b;
+  const scalar = (x1 * x2) + (y1 * y2);
+  const modules = Math.sqrt((x1 ** 2) + (x2 ** 2)) * Math.sqrt((y1 ** 2) + (y2 ** 2));
+  const angle = scalar / modules;
+  return 1 / (Math.cos(angle));
 }
 
 /**
@@ -161,8 +169,8 @@ function parseNumberFromString(value) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelepipedDiagonal(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getParallelepipedDiagonal(a, b, c) {
+  return Math.sqrt((a ** 2) + (b ** 2) + (c ** 2));
 }
 
 
@@ -204,8 +212,17 @@ function roundToPowerOfTen(/* num, pow */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  if (n < 2) {
+    return false;
+  }
+  const m = Math.sqrt(n);
+  for (let i = 2; i <= m; i += 1) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
 }
 
 /**
