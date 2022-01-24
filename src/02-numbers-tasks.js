@@ -114,9 +114,14 @@ function getLinearEquationRoot(a, b) {
  */
 function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
   throw new Error('Not implemented');
+
+  // const radiansAngle = Math.atan2(y2 - y1, x2 - x1);
+  // return radiansAngle;
+
   // const a = Math.atan2(y1, x1);
   // const b = Math.atan2(y2, x2);
   // return a + b;
+
   // const scalar = (x1 * x2) + (y1 * y2);
   // const modules = Math.sqrt((x1 ** 2) + (x2 ** 2)) * Math.sqrt((y1 ** 2) + (y2 ** 2));
   // const angle = scalar / modules;
